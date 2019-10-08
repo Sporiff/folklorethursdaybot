@@ -6,7 +6,7 @@ require 'date'
 
 # Set the bot to run once an hour every Thursday
 
-folkloreThursday = Elephrame::Bots::Periodic.new '0 * * * 4'
+folkloreThursday = Elephrame::Bots::Periodic.new '0 10-22 * * 4'
 
 # Run the bot
 
