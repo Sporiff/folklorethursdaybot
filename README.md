@@ -4,4 +4,4 @@ Folklore Thursday Bot is a simple [Mastodon](https://joinmastodon.org) bot writt
 
 This bot uses [Elephrame](https://github.com/theZacAttacks/elephrame) and is hosted on [Baku Social](https://bakusocial.com)
 
-![Folklore Thursday Icon](https://s3-eu-west-2.amazonaws.com/bakusocial-media/accounts/avatars/000/005/870/original/f2af7e664412cbff.png)
+![Folklore Thursday Icon](https://assets.gitlab-static.net/uploads/-/system/project/avatar/14700046/folklore.png?width=64)
