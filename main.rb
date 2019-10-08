@@ -4,19 +4,20 @@ require 'httparty'
 require 'rss'
 require 'date'
 
-# Set the bot to run once per hour
+# Set the bot to run once an hour every Thursday
 
-folkloreThursday = Elephrame::Bots::Periodic.new '10s'
-
-# Intialise an array to store last run dates in (this is to be replaced with an external file in future)
+folkloreThursday = Elephrame::Bots::Periodic.new '0 * * * 4'
 
 # Run the bot
 
 folkloreThursday.run do |bot|
   
-  # Declare a hash in which to store the values from the XML
+  # Read the last run date from a file. This is so that the
+  # run dates don't change even if the server is rebooted
   
   runDates = File.read("./runDates.txt")
+  
+  # Declare a hash in which to store the values from the XML
 
   data = Hash.new
 
@@ -45,7 +46,8 @@ folkloreThursday.run do |bot|
     bot.post("#{key} \n \n #{value} \n #folklorethursday")
   end
 
-  # Push a new value to the last run time so we don't end up double posting
+  # Overwrite the timing file with the new last run date to prevent
+  # double posting
 
   File.open("runDates.txt", "w+"){ |file| file.puts DateTime.now.to_s}
   
